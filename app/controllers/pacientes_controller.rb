@@ -48,14 +48,14 @@ def update
   private
 
   def carregar_estados
-    @estados = Estado.all collect{|e| [e.sigla,e.id]}
+    @estados = Estado.all.collect{|e| [e.sigla,e.id]}
   end
   
   def carregar_estados_civis
-    @estados_civis = EstadoCivil.all collect{|e| [e.nome,e.id]}
+    @estados_civis = EstadoCivil.all.collect{|e| [e.nome,e.id]}
   end
 
   def carregar_situacoes_profissionais
-    @estados = Paciente::SITUACOES_PROFISSIONAIS
+    @situacoes_profissionais = Paciente::SITUACOES_PROFISSIONAIS
   end
 end
