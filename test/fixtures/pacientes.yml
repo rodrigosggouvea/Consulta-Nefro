@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  nome: MyString
+  data_nascimento: 2012-06-04
+  naturalidade: 1
+  endereco: MyText
+  estado_civil_id: 1
+  num_filhos: 1
+  num_partos: 1
+  num_abortos: 1
+  profissao: MyString
+  situacao_profissional: MyString
+  nome_familiar: MyString
+  telefone_familiar: MyString
+
+two:
+  nome: MyString
+  data_nascimento: 2012-06-04
+  naturalidade: 1
+  endereco: MyText
+  estado_civil_id: 1
+  num_filhos: 1
+  num_partos: 1
+  num_abortos: 1
+  profissao: MyString
+  situacao_profissional: MyString
+  nome_familiar: MyString
+  telefone_familiar: MyString

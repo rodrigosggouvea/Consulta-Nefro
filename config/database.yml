@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: consulta_nefro_development
+  pool: 5
+  username: root
+  password: tzzk7662
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: consulta_nefro_test
+  pool: 5
+  username: root
+  password: tzzk7662
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: consulta_nefro_production
+  pool: 5
+  username: root
+  password: tzzk7662

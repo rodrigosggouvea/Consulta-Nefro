@@ -1,0 +1,65 @@
+<%= form_for(@paciente) do |f| %>
+  <% if @paciente.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@paciente.errors.count, "error") %> prohibited this paciente from being saved:</h2>
+
+      <ul>
+      <% @paciente.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome, "Nome" %><br />
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :data_nascimento, "Data de Nascimento" %><br />
+    <%= f.date_select :data_nascimento %>
+  </div>
+  <div class="field">
+    <%= f.label :naturalidade, "Naturalidade" %><br />
+    <%= f.number_field :naturalidade %>
+  </div>
+  <div class="field">
+    <%= f.label :endereco, "Endereço" %><br />
+    <%= f.text_area :endereco %>
+  </div>
+  <div class="field">
+    <%= f.label :estado_civil_id, "Estado Civil" %><br />
+    <%= f.number_field :estado_civil_id %>
+  </div>
+  <div class="field">
+    <%= f.label :num_filhos, "Número de Filhos" %><br />
+    <%= f.number_field :num_filhos %>
+  </div>
+  <div class="field">
+    <%= f.label :num_partos, "Número de partos" %><br />
+    <%= f.number_field :num_partos %>
+  </div>
+  <div class="field">
+    <%= f.label :num_abortos, "Número de Abortos" %><br />
+    <%= f.number_field :num_abortos %>
+  </div>
+  <div class="field">
+    <%= f.label :profissao, "Profissão" %><br />
+    <%= f.text_field :profissao %>
+  </div>
+  <div class="field">
+    <%= f.label :situacao_profissional, "Situação Profissional" %><br />
+    <%= f.text_field :situacao_profissional %>
+  </div>
+  <div class="field">
+    <%= f.label :nome_familiar, "Nome fo Familiar" %><br />
+    <%= f.text_field :nome_familiar %>
+  </div>
+  <div class="field">
+    <%= f.label :telefone_familiar, "Telefone do Familiar" %><br />
+    <%= f.text_field :telefone_familiar %>
+  </div>
+  <div class="actions">
+    <%= f.submit, "Criar Paciente" %>
+  </div>
+<% end %>
