@@ -15,6 +15,7 @@ end
 
 group :development do
 	gem 'pry'
+	gem 'awesome_print'
 end
 
 gem 'jquery-rails'

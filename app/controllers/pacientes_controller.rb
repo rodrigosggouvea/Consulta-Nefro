@@ -1,5 +1,9 @@
 class PacientesController < ApplicationController
 
+  before_filter :carregar_estados, :only => [:new, :edit, :create, :update]
+  before_filter :carregar_estados_civis, :only => [:new, :edit, :create, :update]
+  before_filter :carregar_situacoes_profissionais, :only => [:new, :edit, :create, :update]
+
   def index
     binding.pry
     @pacientes = Paciente.where(:nome => params[:search])
@@ -39,5 +43,19 @@ def update
     @paciente = Paciente.find(params[:id])
     @paciente.destroy
     redirect_to pacientes_url
+  end
+
+  private
+
+  def carregar_estados
+    @estados = Estado.all collect{|e| [e.sigla,e.id]}
+  end
+  
+  def carregar_estados_civis
+    @estados_civis = EstadoCivil.all collect{|e| [e.nome,e.id]}
+  end
+
+  def carregar_situacoes_profissionais
+    @estados = Paciente::SITUACOES_PROFISSIONAIS
   end
 end
