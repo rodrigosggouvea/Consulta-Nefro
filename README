@@ -1,3 +1,17 @@
+Consulta Nefro é um Site onde um Nefrologista pode Salvar todos os dados de seus Pacientes, 
+incluindo:
+
+  * Dados Pessoais;
+  * Resultados de Exames;
+  * Dados das Consultas;
+
+Esse site está sendo feito usando Rails 3.1, e entre outras ferramentas, o Twitter-Bootstrap
+
+
+
+
+
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create
