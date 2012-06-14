@@ -13,84 +13,80 @@
 
     <br />
     <div class="row-fluid">
-      <div class="span6">
-        <%= f.label :nome, "Nome" %>
+      <div class="span4">
+        <%= f.label :nome, "Nome:" %>
         <%= f.text_field :nome %>
       </div>
-
-      <div class="span6">
-        <%= f.label :data_nascimento, "Data de Nascimento" %>
+      <div class="span4">
+        <%= f.label :sexo, "Sexo:" %>
+        <%= f.select :sexo, ["M","F"] %>
+      </div>
+      <div class="span4">
+        <%= f.label :data_nascimento, "Data de Nascimento:" %>
         <%= f.text_field :data_nascimento %>
       </div>
     </div>
     <br />
   
     <div class="row-fluid">
-      <div class="span6">
-        <%= f.label :naturalidade, "Naturalidade" %><br />
+      <div class="span4">
+        <%= f.label :naturalidade, "Naturalidade:" %><br />
         <%= f.select :naturalidade, @estados %>
       </div>
-  
-      <div class="span6">
-        <%= f.label :endereco, "Endereço" %><br />
+      <div class="span4">
+        <%= f.label :endereco, "Endereço:" %><br />
         <%= f.text_field :endereco %>
       </div>
-    </div>
-    <br />
-  
-    <div class="row-fluid">
-      <div class="span6">
-        <%= f.label :estado_civil_id, "Estado Civil" %><br />
+      <div class="span4">
+        <%= f.label :estado_civil_id, "Estado Civil:" %><br />
         <%= f.select :estado_civil_id, @estados_civis %>
       </div>
-  
-      <div class="span6">
-        <%= f.label :num_filhos, "Número de Filhos" %><br />
-        <%= f.text_field :num_filhos %>
-      </div>
     </div>
     <br />
   
     <div class="row-fluid">
-      <div class="span6">
-        <%= f.label :num_partos, "Número de partos" %><br />
+      <div class="span4">
+        <%= f.label :num_filhos, "Número de Filhos:" %><br />
+        <%= f.text_field :num_filhos %>
+      </div>
+      <div class="span4">
+        <%= f.label :num_partos, "Número de partos:" %><br />
         <%= f.text_field :num_partos %>
       </div>
     
-      <div class="span6">
-        <%= f.label :num_abortos, "Número de Abortos" %><br />
+      <div class="span4">
+        <%= f.label :num_abortos, "Número de Abortos:" %><br />
         <%= f.text_field :num_abortos %>
       </div>
     </div>
     <br />
    
     <div class="row-fluid">
-      <div class="span6">
-        <%= f.label :profissao, "Profissão" %><br />
+      <div class="span4">
+        <%= f.label :profissao, "Profissão:" %><br />
         <%= f.text_field :profissao %>
       </div>
-    
-      <div class="span6">
-        <%= f.label :situacao_profissional, "Situação Profissional" %><br />
+      <div class="span4">
+        <%= f.label :situacao_profissional, "Situação Profissional:" %><br />
         <%= f.select :situacao_profissional, @situacoes_profissionais %>
+      </div>
+      <div class="span4">
+        <%= f.label :nome_familiar, "Nome do Familiar:" %><br />
+        <%= f.text_field :nome_familiar %>
       </div>
     </div> 
     <br />
   
     <div class="row-fluid">
-      <div class="span6">
-        <%= f.label :nome_familiar, "Nome fo Familiar" %><br />
-        <%= f.text_field :nome_familiar %>
-      </div>
     
-      <div class="span6">
-        <%= f.label :telefone_familiar, "Telefone do Familiar" %><br />
+      <div class="span12">
+        <%= f.label :telefone_familiar, "Telefone do Familiar:" %><br />
         <%= f.text_field :telefone_familiar %>
       </div>
     </div>  
     <br />
   
   <div class="actions">
-    <%= f.submit "Criar Paciente" %>
+    <%= f.submit "Salvar Paciente" %>
   </div>
 <% end %>

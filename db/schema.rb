@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120613223627) do
+ActiveRecord::Schema.define(:version => 20120614003927) do
 
   create_table "estados", :force => true do |t|
     t.string   "nome"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20120613223627) do
     t.string   "telefone_familiar"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "sexo",                  :limit => 1
   end
 
 end

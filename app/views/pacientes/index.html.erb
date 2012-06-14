@@ -1,23 +1,22 @@
 <h1>Listar Pacientes</h1>
 
-<%= form_tag pacientes_path, :method => :get %>
-
-    <%= label_tag :search, "Busca por nome:" %>
-    <%= text_field_tag :search %>
-    <%= submit_tag "Buscar" %>
+<%= form_tag pacientes_path, :method => :get do %>
+  <%= label_tag :search, "Busca por nome:" %>
+  <%= text_field_tag :search %>
+  <%= submit_tag "Buscar" %>
+<% end %>
 
 <% if @pacientes.any? %>
-    <table>
-      <tr>
-        <th>Nome</th>
-        <th>Data nascimento</th>
-        <th>Idade</th>
-        <th>Endereco</th>
-        <th>Profissao</th>
-        <th>Situacao profissional</th>
-        <th></th>
-      </tr>
-
+  <table>
+    <tr>
+      <th>Nome</th>
+      <th>Data nascimento</th>
+      <th>Idade</th>
+      <th>Endereco</th>
+      <th>Profissao</th>
+      <th>Situacao profissional</th>
+      <th></th>
+    </tr>
     <% @pacientes.each do |paciente| %>
       <tr>
         <td><%= paciente.nome %></td>
@@ -30,7 +29,7 @@
         <td><%= link_to 'Detalhar', paciente %></td>
       </tr>
     <% end %>
-    </table>
+  </table>
 
 <% else %>
 

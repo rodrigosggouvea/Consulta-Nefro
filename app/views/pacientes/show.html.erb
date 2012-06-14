@@ -7,12 +7,12 @@
 
 <p>
   <b>Data nascimento:</b>
-  <%= @paciente.data_nascimento %>
+  <%= I18n.l(@paciente.data_nascimento, :format => :long) %>
 </p>
 
 <p>
   <b>Naturalidade:</b>
-  <%= @paciente.naturalidade %>
+  <%= Estado.find(@paciente.naturalidade).nome %>
 </p>
 
 <p>
