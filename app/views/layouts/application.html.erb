@@ -6,24 +6,35 @@
       <%= javascript_include_tag "application" %>
       <%= javascript_include_tag "bootstrap" %>
       <%= javascript_include_tag "bootstrap.min" %>
+      <%= javascript_include_tag "jquery" %>
+      <%= javascript_include_tag "jquery.dataTables" %>
+      <%= javascript_include_tag "jquery.dataTables.min" %>
       <%= csrf_meta_tags %>
+    <script type="text/javascript">
+      $(document).ready( function() {
+        $('.table').dataTable();
+        $('.dropdown-toggle').click( function(){
+          $('.dropdown-menu').toggle();
+        });
+      } );
+    </script>
   </head>
   <body>
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
           <%= link_to "ConsultaNefro", root_path, :class => "brand" %>
-          <div class="btn-group pull-right">
-            <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-              <li class="icon-user"></li> Username
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Profile</a></li>
-              <li class="divider"></li>
-              <li><a href="#">Sign Out</a></li>
-            </ul>
-          </div>
+          <% if medico_signed_in? %>
+            <div class="btn-group pull-right">
+              <%= link_to "#", :class => "btn dropdown-toggle", "data-toggle" => "dropdown" do %>
+                <i class="icon-user"></i> <%= current_medico.email %>
+                <span class="caret"></span>
+              <% end %>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Sair", destroy_medico_session_path, :method => :delete %></li>
+              </ul>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
@@ -32,20 +43,25 @@
     <br/>
     <div class="container-fluid">
       <div class="row-fluid">
-        <div class="span2 well sidebar-nav">
         <!--barra lateral-->
-          <ul class="nav nav-list">
-            <li class="nav-header">Consultas</li>
-            <li>Nova Consulta</li>
-            <li>Pesquisar Consultas</li>
-            <li class="nav-header">Pacientes</li>
-            <li><%= link_to "Novo Paciente", new_paciente_path %></li>
-            <li><%= link_to "Pesquisar Pacientes", pacientes_path %></li>
-          </ul>
-        </div>
-        <div class="span10 well">
+        <% if medico_signed_in? %>
+          <div class="span2 well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Consultas</li>
+              <li>Nova Consulta</li>
+              <li>Pesquisar Consultas</li>
+              <li class="nav-header">Pacientes</li>
+              <li><%= link_to "Novo Paciente", new_paciente_path %></li>
+              <li><%= link_to "Pesquisar Pacientes", pacientes_path %></li>
+            </ul>
+          </div>
+        <!-- fim da barra lateral -->
+          <div class="span10 well">
+            <%= yield %>
+          </div>
+        <% else%>
           <%= yield %>
-        </div>
+        <% end %>
       </div>
     </div>
   </body>

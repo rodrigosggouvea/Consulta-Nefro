@@ -9,6 +9,6 @@ validates :nome, :presence => true
 validates :sexo, :presence => true
 
 	def idade
-		(Date.today.year.to_i - self.data_nascimento.to_i).to_s
+		(Date.today.year.to_i - self.data_nascimento.year.to_i).to_s
 	end
 end

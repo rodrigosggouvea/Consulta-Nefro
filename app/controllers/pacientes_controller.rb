@@ -6,11 +6,7 @@ class PacientesController < ApplicationController
   before_filter :carregar_situacoes_profissionais, :only => [:new, :edit, :create, :update]
 
   def index
-    unless params[:search].blank?
-      pesquisa = params[:search].gsub(' ','%')
-      @pacientes = Paciente.where("nome LIKE '%pesquisa%'")
-    end
-    binding.pry
+    @pacientes = Paciente.all
   end
 
   def show
