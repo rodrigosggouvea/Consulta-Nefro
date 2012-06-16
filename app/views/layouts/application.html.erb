@@ -43,8 +43,8 @@
     <br/>
     <div class="container-fluid">
       <div class="row-fluid">
-        <!--barra lateral-->
         <% if medico_signed_in? %>
+          <!--barra lateral-->
           <div class="span2 well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Consultas</li>
@@ -55,7 +55,7 @@
               <li><%= link_to "Pesquisar Pacientes", pacientes_path %></li>
             </ul>
           </div>
-        <!-- fim da barra lateral -->
+          <!-- fim da barra lateral -->
           <div class="span10 well">
             <%= yield %>
           </div>
