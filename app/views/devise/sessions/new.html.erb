@@ -1,5 +1,8 @@
 <div class="well" style="width: 40%; margin-left: 30%">
 <h2>Login</h2>
+<div style="float: right">
+<%= image_tag "medico.png", :size => "128x128" %>
+</div>
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
   <div><%= f.label :email, "E-mail" %>
