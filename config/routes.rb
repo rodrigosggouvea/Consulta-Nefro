@@ -3,7 +3,7 @@ ConsultaNefro::Application.routes.draw do
 
   resources :pacientes
 
-  root :to => "application#index"
+  root :to => "pacientes#index"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

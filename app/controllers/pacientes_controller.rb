@@ -48,8 +48,8 @@ class PacientesController < ApplicationController
     @paciente = Paciente.find(params[:id])
   end
 
-  def carregar_estados
-    @estados = Estado.all.collect{|e| [e.sigla,e.id]}
+  def carregar_estadso
+    @estados = Estado.all.collect{|e| ["#{e.sigla} - #{e.nome}",e.id]}
   end
   
   def carregar_estados_civis

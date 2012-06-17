@@ -6,6 +6,7 @@ gem 'rails', '3.1.0'
 gem 'pg'
 gem 'therubyracer'
 gem 'devise'
+gem 'heroku'
 
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0"
