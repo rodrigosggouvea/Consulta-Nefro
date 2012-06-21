@@ -1,0 +1,47 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  hematocto: 1
+  hemoglobina: 1
+  glicose: 1
+  hemoglibina_glicosada: 1
+  ureia: 1
+  creatinina: 1
+  sodio: 1
+  potassio: 1
+  calcio: 1
+  fosforo: 1
+  albumina: 1
+  acido_urico: 1
+  colesterol: 1
+  hdl: 1
+  ldl: 1
+  trigliceridios: 1
+  volume: 1
+  clearance: 1
+  proteinuria: 1
+  uct: 1
+  eas: 1
+
+two:
+  hematocto: 1
+  hemoglobina: 1
+  glicose: 1
+  hemoglibina_glicosada: 1
+  ureia: 1
+  creatinina: 1
+  sodio: 1
+  potassio: 1
+  calcio: 1
+  fosforo: 1
+  albumina: 1
+  acido_urico: 1
+  colesterol: 1
+  hdl: 1
+  ldl: 1
+  trigliceridios: 1
+  volume: 1
+  clearance: 1
+  proteinuria: 1
+  uct: 1
+  eas: 1

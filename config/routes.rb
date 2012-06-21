@@ -1,6 +1,4 @@
 ConsultaNefro::Application.routes.draw do
-  resources :consultas
-
   devise_for :medicos
 
   resources :pacientes

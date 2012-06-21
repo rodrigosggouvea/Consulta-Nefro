@@ -11,82 +11,94 @@
     </div>
   <% end %>
 
-    <br />
-    <div class="row-fluid">
-      <div class="span4">
-        <%= f.label :nome, "Nome:" %>
-        <%= f.text_field :nome %>
-      </div>
-      <div class="span4">
-        <%= f.label :sexo, "Sexo:" %>
-        <%= f.select :sexo, ["M","F"] %>
-      </div>
-      <div class="span4">
-        <%= f.label :data_nascimento, "Data de Nascimento:" %>
-        <%= f.text_field :data_nascimento %>
-      </div>
+  <br />
+  <div class="row-fluid">
+    <div class="span4">
+      <%= f.label :nome, "Nome:" %>
+      <%= f.text_field :nome %>
     </div>
-    <br />
-  
-    <div class="row-fluid">
-      <div class="span4">
-        <%= f.label :naturalidade, "Naturalidade:" %> 
-        <%= f.select :naturalidade, @estados %>
-      </div>
-      <div class="span4">
-        <%= f.label :endereco, "Endereço:" %> 
-        <%= f.text_field :endereco %>
-      </div>
-      <div class="span4">
-        <%= f.label :estado_civil_id, "Estado Civil:" %> 
-        <%= f.select :estado_civil_id, @estados_civis %>
-      </div>
+    <div class="span4">
+      <%= f.label :sexo, "Sexo:" %>
+      <%= f.select :sexo, ["M","F"] %>
     </div>
-    <br />
-  
-    <div class="row-fluid">
-      <div class="span4">
-        <%= f.label :num_filhos, "Número de Filhos:" %> 
-        <%= f.text_field :num_filhos %>
-      </div>
-      <div class="span4">
-        <%= f.label :num_partos, "Número de partos:" %> 
-        <%= f.text_field :num_partos %>
-      </div>
-    
-      <div class="span4">
-        <%= f.label :num_abortos, "Número de Abortos:" %> 
-        <%= f.text_field :num_abortos %>
-      </div>
+    <div class="span4">
+      <%= f.label :data_nascimento, "Data de Nascimento:" %>
+      <%= f.text_field :data_nascimento, :value => Date.today.to_s %>
     </div>
-    <br />
-   
-    <div class="row-fluid">
-      <div class="span4">
-        <%= f.label :profissao, "Profissão:" %> 
-        <%= f.text_field :profissao %>
-      </div>
-      <div class="span4">
-        <%= f.label :situacao_profissional, "Situação Profissional:" %> 
-        <%= f.select :situacao_profissional, @situacoes_profissionais %>
-      </div>
-      <div class="span4">
-        <%= f.label :nome_familiar, "Nome do Familiar:" %> 
-        <%= f.text_field :nome_familiar %>
-      </div>
-    </div> 
-    <br />
+  </div>
+  <br />
+
+  <div class="row-fluid">
+    <div class="span4">
+      <%= f.label :naturalidade, "Naturalidade:" %> 
+      <%= f.select :naturalidade, @estados %>
+    </div>
+    <div class="span4">
+      <%= f.label :endereco, "Endereço:" %> 
+      <%= f.text_field :endereco %>
+    </div>
+    <div class="span4">
+      <%= f.label :estado_civil_id, "Estado Civil:" %> 
+      <%= f.select :estado_civil_id, @estados_civis %>
+    </div>
+  </div>
+  <br />
+
+  <div class="row-fluid">
+    <div class="span4">
+      <%= f.label :num_filhos, "Número de Filhos:" %> 
+      <%= f.text_field :num_filhos %>
+    </div>
+    <div class="span4">
+      <%= f.label :num_partos, "Número de partos:" %> 
+      <%= f.text_field :num_partos %>
+    </div>
   
-    <div class="row-fluid">
-    
-      <div class="span12">
-        <%= f.label :telefone_familiar, "Telefone do Familiar:" %> 
-        <%= f.text_field :telefone_familiar %>
-      </div>
-    </div>  
-    <br />
-  co
+    <div class="span4">
+      <%= f.label :num_abortos, "Número de Abortos:" %> 
+      <%= f.text_field :num_abortos %>
+    </div>
+  </div>
+  <br />
+ 
+  <div class="row-fluid">
+    <div class="span4">
+      <%= f.label :profissao, "Profissão:" %> 
+      <%= f.text_field :profissao %>
+    </div>
+    <div class="span4">
+      <%= f.label :situacao_profissional, "Situação Profissional:" %> 
+      <%= f.select :situacao_profissional, @situacoes_profissionais %>
+    </div>
+    <div class="span4">
+      <%= f.label :nome_familiar, "Nome do Familiar:" %> 
+      <%= f.text_field :nome_familiar %>
+    </div>
+  </div> 
+  <br />
+
+  <div class="row-fluid">
+  
+    <div class="span12">
+      <%= f.label :telefone_familiar, "Telefone do Familiar:" %> 
+      <%= f.text_field :telefone_familiar %>
+    </div>
+  </div>  
+  <br />
+
+  <h2>Dados da Consulta</h2>
+  <br/>
+  <%= f.fields_for :consultas do |consulta_fields| -%>
+    <%= render :partial => "consultas_fields", :locals => {:f => consulta_fields} -%>
+  <% end %>
+  <br/>  
+  <h2>Resultados de Exames</h2>
+  <br/>
+  <%= f.fields_for :resultados_exames do |exames_fields| -%>
+    <%= render :partial => "exames_fields", :locals => {:f => exames_fields, :paciente => @paciente} -%>
+  <% end %>
+  <br/>  
   <div class="actions">
-    <%= f.submit "Salvar Paciente",:class => "btn btn_primary" %>
+    <%= f.submit "Salvar",:class => "btn btn_primary" %>
   </div>
 <% end %>

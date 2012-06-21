@@ -14,6 +14,8 @@ class PacientesController < ApplicationController
 
   def new
     @paciente = Paciente.new
+    # @paciente.consultas.build
+    # @paciente.resultados_exames.build
   end
 
   def edit
@@ -22,7 +24,7 @@ class PacientesController < ApplicationController
   def create
     @paciente = Paciente.new(params[:paciente])
       if @paciente.save
-        redirect_to @paciente, notice: 'Paciente criado com sucesso!'
+        redirect_to new_consulta_path(:paciente_id => @paciente.id), notice: 'Paciente criado com sucesso!'
       else
         render action: "new" 
       end

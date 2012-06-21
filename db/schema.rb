@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120621125125) do
+ActiveRecord::Schema.define(:version => 20120621144524) do
 
   create_table "consultas", :force => true do |t|
     t.integer  "paciente_id"
@@ -100,6 +100,34 @@ ActiveRecord::Schema.define(:version => 20120621125125) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "sexo",                  :limit => 1
+  end
+
+  create_table "resultados_exames", :force => true do |t|
+    t.integer  "hematocto"
+    t.integer  "hemoglobina"
+    t.integer  "glicose"
+    t.integer  "hemoglibina_glicosada"
+    t.integer  "ureia"
+    t.integer  "creatinina"
+    t.integer  "sodio"
+    t.integer  "potassio"
+    t.integer  "calcio"
+    t.integer  "fosforo"
+    t.integer  "albumina"
+    t.integer  "acido_urico"
+    t.integer  "colesterol"
+    t.integer  "hdl"
+    t.integer  "ldl"
+    t.integer  "trigliceridios"
+    t.integer  "volume"
+    t.integer  "clearance"
+    t.integer  "proteinuria"
+    t.integer  "uct"
+    t.integer  "eas"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "paciente_id"
+    t.date     "data"
   end
 
 end
