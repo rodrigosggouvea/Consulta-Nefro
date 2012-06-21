@@ -2,6 +2,7 @@ class Paciente < ActiveRecord::Base
 
 belongs_to :estado
 belongs_to :estado_civil
+has_many :consultas
 
 SITUACOES_PROFISSIONAIS = ["Aposentado", "Desempregado", "Parado"]
 

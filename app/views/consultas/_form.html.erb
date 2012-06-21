@@ -1,0 +1,143 @@
+<%= form_for(@consulta) do |f| %>
+  <% if @consulta.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@consulta.errors.count, "error") %> prohibited this consultum from being saved:</h2>
+
+      <ul>
+      <% @consulta.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="row-fluid">
+    <div class="span6" >
+      <%= f.hidden_field :paciente_id, :value => params[:paciente_id] %>
+      <%= f.hidden_field :medico_id, :value => params[:medico_id] %>
+      <%= f.label :data, "Data da Consulta" %> 
+      <%= f.text_field :data %>
+      <%= f.label :motivo, "Motivo da Consulta" %> 
+      <%= f.text_field :motivo %>
+      <%= f.label :hist_doenca_atual, "Histórico da Doença Atual" %> 
+      <%= f.text_area :hist_doenca_atual, :rows => 5 %>
+      <%= f.label :hist_doenca_regressa, "Histórico da Doença Regressa" %> 
+      <%= f.text_area :hist_doenca_regressa, :rows => 5 %>
+      <%= f.label :historico_familiar_pai, "Histórico Familiar: Pai" %> 
+      <%= f.text_area :historico_familiar_pai, :rows => 5 %>
+      <%= f.label :historico_familiar_mae, "Histórico Familiar: Mãe" %> 
+      <%= f.text_area :historico_familiar_mae, :rows => 5 %>
+      <%= f.label :historico_familiar_irmaos, "Histórico Familiar: Irmãos" %> 
+      <%= f.text_area :historico_familiar_irmaos, :rows => 5 %>
+      <br/>
+      <table style="width:85%" class="table table-bordered">
+        <tbody>
+          <tr>
+            <td><%= f.label :doenca_renal_na_familia, "Possui doenca renal na família?" %> </td>
+            <td><%= f.check_box :doenca_renal_na_familia %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :familiar_em_dialise, "Possui Familiar em diálise?" %> </td>
+            <td><%= f.check_box :familiar_em_dialise %></td>
+          </tr>
+        </tbody>
+      </table>
+      <br/>
+      <%= f.label :medicacao_em_uso, "medicacao_em_uso" %> 
+      <%= f.text_area :medicacao_em_uso, :rows => 5 %>
+      <%= f.label :ultra_sonografia_rins, "Ultra-sonografia dos Rins" %> 
+      <%= f.text_area :ultra_sonografia_rins, :rows => 5 %>
+      <%= f.label :dosagem_25_hipoxi_vitamina_d, "Dosagem 25-hipóxi vitamina D" %> 
+      <%= f.text_field :dosagem_25_hipoxi_vitamina_d %>
+      <%= f.label :dosagem_ph_intacto, "Dosagem de ph Intacto" %> 
+      <%= f.text_field :dosagem_ph_intacto %>
+    </div>
+    <div class="span6" >
+      <table style="width:85%" class ="table table-bordered" >
+      <tbody>
+        <tr>
+          <td><%= f.label :diabetes, "Diabates" %> </td>
+          <td><%= f.check_box :diabetes %></td>
+        </tr>
+        <tr>
+          <td><%= f.label :hepatite, "Hepatite" %></td> 
+          <td><%= f.check_box :hepatite %></td>
+        </tr>
+        <tr>
+          <td><%= f.label :transfusao_sanguinea,"Fez Transfusao Sanguínea" %></td> 
+          <td><%= f.check_box :transfusao_sanguinea %></td>
+        </tr>
+        <tr>
+          <td><%= f.label :tabagismo, "Tabagismo" %></td> 
+          <td><%= f.check_box :tabagismo %></td>
+        </tr>
+        <tr>
+          <td><%= f.label :etilismo, "Etilismo" %></td> 
+          <td><%= f.check_box :etilismo %></td>
+        </tr>
+        <tr>
+          <td><%= f.label :drogas_ilicitas, "Drogas Ilícitas" %></td> 
+          <td><%= f.check_box :drogas_ilicitas %></td>
+        </tr>
+        <tr>
+          <td><%= f.label :fratura, "Fratura" %></td> 
+          <td><%= f.check_box :fratura %></td>
+        </tr>
+        <tr>
+          <td><%= f.label :cirurgias %></td> 
+          <td><%= f.check_box :cirurgias %></td>
+        </tr>
+        <tr>
+          <td><%= f.label :tuberculose %></td> 
+          <td><%= f.check_box :tuberculose %></td>
+        </tr>
+        <tr>
+          <td><%= f.label :alergia %></td> 
+          <td><%= f.check_box :alergia %></td>
+        </tr>
+        <tr>
+          <td><%= f.label :intolerancia_alimentar %></td> 
+          <td><%= f.check_box :intolerancia_alimentar %></td>
+        </tr>
+        <tr>
+          <td><%= f.label :pneumonia %></td> 
+          <td><%= f.check_box :pneumonia %></td>
+        </tr>
+        <tr>
+          <td><%= f.label :infeccao_urinaria %></td> 
+          <td><%= f.check_box :infeccao_urinaria %></td>
+        </tr>
+        <tr>
+          <td><%= f.label :nocturia %></td> 
+          <td><%= f.check_box :nocturia %></td>
+        </tr>
+        <tr>
+          <td><%= f.label :disuria %></td> 
+          <td><%= f.check_box :disuria %></td>
+        </tr>
+        <tr>
+          <td><%= f.label :urina_espumosa %></td> 
+          <td><%= f.check_box :urina_espumosa %></td>
+        </tr>
+        <tr>
+          <td><%= f.label :rx_torax %></td> 
+          <td><%= f.check_box :rx_torax %></td>
+        </tr>
+        <tr>
+          <td><%= f.label :eco_cardiograma %></td> 
+          <td><%= f.check_box :eco_cardiograma %></td>
+        </tr>
+        <tr>
+          <td><%= f.label :edcoscopia_digestiva %></td> 
+          <td><%= f.check_box :edcoscopia_digestiva %></td>
+        </tr>
+        <tr>
+          <td><%= f.label :eletro_cardiograma %></td> 
+          <td><%= f.check_box :eletro_cardiograma %></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <br/>
+  <%= f.submit "Salvar", :class => "btn btn-large" %>
+<% end %>

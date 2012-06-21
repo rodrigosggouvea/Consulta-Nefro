@@ -12,7 +12,7 @@
       <%= csrf_meta_tags %>
     <script type="text/javascript">
       $(document).ready( function() {
-        $('.table').dataTable();
+        // $('.table').dataTable();
         $('.dropdown-toggle').click( function(){
           $('.dropdown-menu').toggle();
         });
@@ -48,8 +48,7 @@
           <div class="span2 well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Consultas</li>
-              <li>Nova Consulta</li>
-              <li>Pesquisar Consultas</li>
+              <li><%= link_to "Pesquisar Consultas", consultas_path %></li>
               <li class="nav-header">Pacientes</li>
               <li><%= link_to "Novo Paciente", new_paciente_path %></li>
               <li><%= link_to "Pesquisar Pacientes", pacientes_path %></li>

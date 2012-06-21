@@ -1,0 +1,91 @@
+<h1>Listing consulta</h1>
+
+<table>
+  <tr>
+    <th>Paciente</th>
+    <th>Medico</th>
+    <th>Motivo</th>
+    <th>Hist doenca atual</th>
+    <th>Hist doenca regressa</th>
+    <th>Data</th>
+    <th>Diabetes</th>
+    <th>Hepatite</th>
+    <th>Transfusao sanguinea</th>
+    <th>Tabagismo</th>
+    <th>Etilismo</th>
+    <th>Drogas ilicitas</th>
+    <th>Fratura</th>
+    <th>Cirurgias</th>
+    <th>Tuberculose</th>
+    <th>Alergia</th>
+    <th>Intolerancia alimentar</th>
+    <th>Pneumonia</th>
+    <th>Infeccao urinaria</th>
+    <th>Nocturia</th>
+    <th>Disuria</th>
+    <th>Urina espumosa</th>
+    <th>Rx torax</th>
+    <th>Eco cardiograma</th>
+    <th>Edcoscopia digestiva</th>
+    <th>Eletro cardiograma</th>
+    <th>Historico familiar pai</th>
+    <th>Historico familiar mae</th>
+    <th>Historico familiar irmaos</th>
+    <th>Doenca renal na familia</th>
+    <th>Familiar em dialise</th>
+    <th>Medicacao em uso</th>
+    <th>Ultra sonografia rins</th>
+    <th>Dosagem 25 hipoxi vitamina d</th>
+    <th>Dosagem ph intacto</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @consultas.each do |consulta| %>
+  <tr>
+    <td><%= consulta.paciente_id %></td>
+    <td><%= consulta.medico_id %></td>
+    <td><%= consulta.motivo %></td>
+    <td><%= consulta.hist_doenca_atual %></td>
+    <td><%= consulta.hist_doenca_regressa %></td>
+    <td><%= consulta.data %></td>
+    <td><%= consulta.diabetes %></td>
+    <td><%= consulta.hepatite %></td>
+    <td><%= consulta.transfusao_sanguinea %></td>
+    <td><%= consulta.tabagismo %></td>
+    <td><%= consulta.etilismo %></td>
+    <td><%= consulta.drogas_ilicitas %></td>
+    <td><%= consulta.fratura %></td>
+    <td><%= consulta.cirurgias %></td>
+    <td><%= consulta.tuberculose %></td>
+    <td><%= consulta.alergia %></td>
+    <td><%= consulta.intolerancia_alimentar %></td>
+    <td><%= consulta.pneumonia %></td>
+    <td><%= consulta.infeccao_urinaria %></td>
+    <td><%= consulta.nocturia %></td>
+    <td><%= consulta.disuria %></td>
+    <td><%= consulta.urina_espumosa %></td>
+    <td><%= consulta.rx_torax %></td>
+    <td><%= consulta.eco_cardiograma %></td>
+    <td><%= consulta.edcoscopia_digestiva %></td>
+    <td><%= consulta.eletro_cardiograma %></td>
+    <td><%= consulta.historico_familiar_pai %></td>
+    <td><%= consulta.historico_familiar_mae %></td>
+    <td><%= consulta.historico_familiar_irmaos %></td>
+    <td><%= consulta.doenca_renal_na_familia %></td>
+    <td><%= consulta.familiar_em_dialise %></td>
+    <td><%= consulta.medicacao_em_uso %></td>
+    <td><%= consulta.ultra_sonografia_rins %></td>
+    <td><%= consulta.dosagem_25_hipoxi_vitamina_d %></td>
+    <td><%= consulta.dosagem_ph_intacto %></td>
+    <td><%= link_to 'Show', consulta %></td>
+    <td><%= link_to 'Edit', edit_consulta_path(consulta) %></td>
+    <td><%= link_to 'Destroy', consulta, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New consulta', new_consulta_path %>
