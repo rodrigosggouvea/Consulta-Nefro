@@ -1,0 +1,28 @@
+<div class="row-fluid">
+  <div class="span6" >
+		<%= f.hidden_field :paciente_id, :value => paciente.id %>
+		<%= f.hidden_field :data, :value => Date.today %>
+		<%= f.label :peso %>
+		<%= f.text_field :peso %>
+		<%= f.label :ectoscopia, "Ectoscopia" %>
+		<%= f.text_field :ectoscopia %>
+		<%= f.label :aparelho_respiratorio %>
+		<%= f.text_field :aparelho_respiratorio %>
+		<%= f.label :aparelho_cardiaco %>
+		<%= f.text_field :aparelho_cardiaco %>
+		<%= f.label :abdomem %>
+		<%= f.text_field :abdomem %>
+		<%= f.label :punho_percussao %>
+		<%= f.text_field :punho_percussao %>
+		<%= f.label :pulsos_perifericos %>
+		<%= f.text_field :pulsos_perifericos %>
+		<%= f.label :pele %>
+		<%= f.text_field :pele %>
+	</div>
+  <div class="span6" >
+		<%= f.label :altura %>
+		<%= f.text_field :altura %>
+		<%= f.label :conduta %>
+		<%= f.text_area :conduta %>
+	</div>
+</div>

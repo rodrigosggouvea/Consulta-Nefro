@@ -10,6 +10,8 @@
     <th>Profissao</th>
     <th>Situacao profissional</th>
     <th></th>
+    <th></th>
+    <th></th>
   </tr>
   <% @pacientes.each do |paciente| %>
     <tr>
@@ -20,6 +22,8 @@
       <td><%= paciente.profissao %></td>
       <td><%= paciente.situacao_profissional %></td>
       <td><%= link_to 'Detalhar', paciente %></td>
+      <td><%= link_to 'Criar Acompanhamento', new_acompanhamento_pacientes_path(:paciente_id => paciente.id) %></td>
+      <td><%#= link_to 'Detalhar', new_resultado_exame_pacientes_path(:paciente_id => paciente.id) %></td>
     </tr>
   <% end %>
 </table>

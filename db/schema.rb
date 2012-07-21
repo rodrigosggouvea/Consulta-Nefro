@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120621144524) do
+ActiveRecord::Schema.define(:version => 20120721175716) do
+
+  create_table "acompanhamentos", :force => true do |t|
+    t.integer  "paciente_id"
+    t.date     "data"
+    t.text     "queixas"
+    t.text     "medicacao"
+    t.float    "pa"
+    t.float    "peso"
+    t.string   "aparelho_cardiaco"
+    t.string   "mmiis"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "consultas", :force => true do |t|
     t.integer  "paciente_id"
@@ -62,6 +75,23 @@ ActiveRecord::Schema.define(:version => 20120621144524) do
 
   create_table "estados_civis", :force => true do |t|
     t.string   "nome"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "exames_fisicos", :force => true do |t|
+    t.integer  "paciente_id"
+    t.date     "data"
+    t.string   "ectoscopia"
+    t.string   "aparelho_respiratorio"
+    t.string   "aparelho_cardiaco"
+    t.string   "abdomem"
+    t.string   "punho_percussao"
+    t.string   "pulsos_perifericos"
+    t.string   "pele"
+    t.float    "peso"
+    t.float    "altura"
+    t.text     "conduta"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

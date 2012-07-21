@@ -9,7 +9,7 @@
 			<%= paciente.resultados_exames.each do |resultado| %>
 				<th>resultado.data</th>
 			<% end %>
-			<th><%= f.text_field :data, :value => Date.today.to_s %></th>
+			<th><%= f.text_field :data, :value => Date.today.to_s, :class => "date_field" %></th>
 		</tr>
 	</thead>
 

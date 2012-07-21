@@ -1,7 +1,14 @@
 ConsultaNefro::Application.routes.draw do
   devise_for :medicos
 
-  resources :pacientes
+  resources :pacientes do
+    collection do
+      get :new_acompanhamento
+      post :create_acompanhamento
+      get :new_resultado_exame
+      post :create_resultado_exame
+    end
+  end
 
   root :to => "pacientes#index"
   

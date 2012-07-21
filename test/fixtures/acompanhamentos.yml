@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  paciente_id: 1
+  data: 2012-07-21
+  queixas: MyText
+  medicacao: MyText
+  pa: 1.5
+  peso: 1.5
+  aparelho_cardiaco: MyString
+  mmiis: MyString
+
+two:
+  paciente_id: 1
+  data: 2012-07-21
+  queixas: MyText
+  medicacao: MyText
+  pa: 1.5
+  peso: 1.5
+  aparelho_cardiaco: MyString
+  mmiis: MyString

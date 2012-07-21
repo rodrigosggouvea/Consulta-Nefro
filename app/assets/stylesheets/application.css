@@ -5,3 +5,12 @@
  *= require_self
  *= require_tree . 
 */
+
+
+.date_field {
+	width: 50% !important;
+}
+
+.form_paciente input[type="text"], textarea {
+	width:85% !important;
+}

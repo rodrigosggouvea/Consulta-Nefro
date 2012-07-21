@@ -6,6 +6,7 @@
    inflect.irregular 'estado_civil', 'estados_civis'
    inflect.irregular 'consulta', 'consultas'
    inflect.irregular 'resultado_exames', 'resultados_exames'
+   inflect.irregular 'exame_fisico', 'exames_fisicos'
  end
 
 # colunas de resultados_exames

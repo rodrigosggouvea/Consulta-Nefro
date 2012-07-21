@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  paciente_id: 1
+  data: 2012-07-21
+  ectoscopia: MyString
+  aparelho_respiratorio: MyString
+  aparelho_cardiaco: MyString
+  abdomem: MyString
+  punho_percussao: MyString
+  pulsos_perifericos: MyString
+  pele: MyString
+  peso: 1.5
+  altura: 1.5
+  conduta: MyText
+
+two:
+  paciente_id: 1
+  data: 2012-07-21
+  ectoscopia: MyString
+  aparelho_respiratorio: MyString
+  aparelho_cardiaco: MyString
+  abdomem: MyString
+  punho_percussao: MyString
+  pulsos_perifericos: MyString
+  pele: MyString
+  peso: 1.5
+  altura: 1.5
+  conduta: MyText

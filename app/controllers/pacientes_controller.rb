@@ -14,8 +14,6 @@ class PacientesController < ApplicationController
 
   def new
     @paciente = Paciente.new
-    # @paciente.consultas.build
-    # @paciente.resultados_exames.build
   end
 
   def edit
@@ -24,7 +22,7 @@ class PacientesController < ApplicationController
   def create
     @paciente = Paciente.new(params[:paciente])
       if @paciente.save
-        redirect_to new_consulta_path(:paciente_id => @paciente.id), notice: 'Paciente criado com sucesso!'
+        redirect_to pacientes_path, notice: 'Paciente criado com sucesso!'
       else
         render action: "new" 
       end
@@ -39,9 +37,22 @@ class PacientesController < ApplicationController
   end
 
   def destroy
-    @paciente = Paciente.find(params[:id])
     @paciente.destroy
-    redirect_to pacientes_url
+    redirect_to pacientes_path, notice: 'Paciente apagado.'
+  end
+
+  def new_acompanhamento
+    @acompanhamento = Acompanhamento.new(:paciente_id => params[:paciente_id])
+    @paciente = Paciente.find(params[:paciente_id])
+  end
+
+  def create_acompanhamento
+    @acompanhamento = Acompanhamento.new(params[:acompanhamento])
+    if @acompanhamento.save
+      redirect_to pacientes_path, notice: 'Acompanhamento salvo!'
+    else
+      render action: "new_acompanhamento"
+    end
   end
 
   private
