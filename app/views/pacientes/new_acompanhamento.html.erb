@@ -1,6 +1,45 @@
 <h1>Acompanhamento do Paciente <%= @paciente.nome %></h1>
 <hr/>
-<% if @paciente.acompanhamentos.any? %>
+<% if @ultimo_acompanhamento %>
 <h2>Acompanhamento Anterior</h2>
+<h3>Data: <%= @ultimo_acompanhamento.data.to_s %></h3>
+<h4>Queixas</h4>
+<p><%= @ultimo_acompanhamento.queixas %></p>
+<h4>Medicação</h4>
+<p><%= @ultimo_acompanhamento.medicacao %></p>
+<h4>PA</h4>
+<p><%= @ultimo_acompanhamento.pa %></p>
+<h4>Peso</h4>
+<p><%= @ultimo_acompanhamento.peso %></p>
+<h4>Aparelho Cardíaco</h4>
+<p><%= @ultimo_acompanhamento.aparelho_cardiaco %></p>
+<h4>MMIIs</h4>
+<p><%= @ultimo_acompanhamento.mmiis %></p>
+<hr/>
+<% end %>
+<%= form_for @acompanhamento, :url => create_acompanhamento_pacientes_path(:paciente_id => params[:paciente_id]) do |f| %>
+	<%= f.hidden_field:paciente_id, :value => params[:paciente_id] %>
 
+  <%= f.label  :data %>
+  <%= f.text_field  :data, :value => Date.today.to_s, :class => "date_field" %>
+	<br/>
+  <%= f.label  :queixas %>
+  <%= f.text_area  :queixas %>
+	<br/>
+  <%= f.label  :medicacao %>
+  <%= f.text_area  :medicacao %>
+	<br/>
+  <%= f.label  :pa %>
+  <%= f.text_field  :pa %>
+	<br/>
+  <%= f.label  :peso %>
+  <%= f.text_field  :peso %>
+	<br/>
+  <%= f.label  :aparelho_cardiaco %>
+  <%= f.text_field  :aparelho_cardiaco %>
+	<br/>
+  <%= f.label  :mmiis %>
+  <%= f.text_field  :mmiis %>
+	<hr/>
+	<%= f.submit "Salvar", :class => "btn" %>
 <% end %>

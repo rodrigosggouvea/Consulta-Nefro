@@ -14,6 +14,7 @@ class PacientesController < ApplicationController
 
   def new
     @paciente = Paciente.new
+    @paciente.resultados_exames.build
   end
 
   def edit
@@ -42,8 +43,9 @@ class PacientesController < ApplicationController
   end
 
   def new_acompanhamento
-    @acompanhamento = Acompanhamento.new(:paciente_id => params[:paciente_id])
     @paciente = Paciente.find(params[:paciente_id])
+    @acompanhamento = Acompanhamento.new(:paciente_id => params[:paciente_id])
+    @ultimo_acompanhamento = @paciente.ultimo_acompanhamento
   end
 
   def create_acompanhamento
@@ -52,6 +54,22 @@ class PacientesController < ApplicationController
       redirect_to pacientes_path, notice: 'Acompanhamento salvo!'
     else
       render action: "new_acompanhamento"
+    end
+  end
+
+  def new_resultado_exames
+    @paciente = Paciente.find(params[:paciente_id])
+    @resultado_exames = ResultadoExames.new(:paciente_id => params[:paciente_id])
+    @paciente.resultados_exames << @resultado_exames
+    @resultados_exames = @paciente.resultados_exames
+  end
+
+  def create_resultado_exames
+    @resultado_exames = ResultadoExames.new(params[:resultado_exames])
+    if @resultado_exames.save
+      redirect_to pacientes_path, notice: 'Exames salvos!'
+    else
+      render action: "new_resultado_exames"
     end
   end
 

@@ -21,9 +21,9 @@
       <td><%= paciente.endereco %></td>
       <td><%= paciente.profissao %></td>
       <td><%= paciente.situacao_profissional %></td>
-      <td><%= link_to 'Detalhar', paciente %></td>
-      <td><%= link_to 'Criar Acompanhamento', new_acompanhamento_pacientes_path(:paciente_id => paciente.id) %></td>
-      <td><%#= link_to 'Detalhar', new_resultado_exame_pacientes_path(:paciente_id => paciente.id) %></td>
+      <td><%= link_to 'Detalhar', paciente, :class => "btn" %></td>
+      <td><%= link_to 'Acompanhamento', new_acompanhamento_pacientes_path(:paciente_id => paciente.id), :class => "btn" %></td>
+      <td><%= link_to 'Exames', new_resultado_exames_pacientes_path(:paciente_id => paciente.id), :class => "btn" %></td>
     </tr>
   <% end %>
 </table>

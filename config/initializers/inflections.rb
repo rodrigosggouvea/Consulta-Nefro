@@ -3,6 +3,7 @@
 # Add new inflection rules using the following format
 # (all these examples are active by default):
  ActiveSupport::Inflector.inflections do |inflect|
+ 	inflect.clear :uncountables
    inflect.irregular 'estado_civil', 'estados_civis'
    inflect.irregular 'consulta', 'consultas'
    inflect.irregular 'resultado_exames', 'resultados_exames'

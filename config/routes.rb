@@ -5,8 +5,8 @@ ConsultaNefro::Application.routes.draw do
     collection do
       get :new_acompanhamento
       post :create_acompanhamento
-      get :new_resultado_exame
-      post :create_resultado_exame
+      get :new_resultado_exames
+      post :create_resultado_exames
     end
   end
 
