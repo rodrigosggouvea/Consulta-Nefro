@@ -14,13 +14,16 @@ class PacientesController < ApplicationController
 
   def new
     @paciente = Paciente.new
-    @paciente.resultados_exames.build
+    @consulta = Consulta.new(:paciente => @paciente, :medico => current_medico)
+    @resultado_exames = ResultadoExames.new(:paciente => @paciente)
+    @exame_fisico = ExameFisico.new(:paciente => @paciente)
   end
 
   def edit
   end
 
   def create
+    binding.pry
     @paciente = Paciente.new(params[:paciente])
       if @paciente.save
         redirect_to pacientes_path, notice: 'Paciente criado com sucesso!'
@@ -59,9 +62,8 @@ class PacientesController < ApplicationController
 
   def new_resultado_exames
     @paciente = Paciente.find(params[:paciente_id])
-    @resultado_exames = ResultadoExames.new(:paciente_id => params[:paciente_id])
-    @paciente.resultados_exames << @resultado_exames
     @resultados_exames = @paciente.resultados_exames
+    @resultado_exames = ResultadoExames.new(:paciente => @paciente)
   end
 
   def create_resultado_exames

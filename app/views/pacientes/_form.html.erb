@@ -88,19 +88,19 @@
 
   <h2>Dados da Consulta</h2>
   <br/>
-  <%= f.fields_for :consultas do |consulta_fields| %>
+  <%= f.fields_for :consultas, @consulta do |consulta_fields| %>
     <%= render :partial => "consultas_fields", :locals => {:f => consulta_fields} -%>
   <% end %>
   <br/>  
   <h2>Resultados de Exames</h2>
   <br/>
-  <%= f.fields_for :resultados_exames do |exames_fields| %>
+  <%= f.fields_for :resultados_exames, @resultado_exames do |exames_fields| %>
     <%= render :partial => "exames_fields", :locals => {:f => exames_fields, :paciente => @paciente} -%>
   <% end %>
   <br/>  
   <h2>Exame Físico</h2>
   <br/>
-  <%= f.fields_for :exames_fisicos do |exames_fisicos_fields| -%>
+  <%= f.fields_for :exames_fisicos, @exame_fisico do |exames_fisicos_fields| -%>
     <%= render :partial => "exames_fisicos_fields", :locals => {:f => exames_fisicos_fields, :paciente => @paciente} -%>
   <% end %>
   <br/>  

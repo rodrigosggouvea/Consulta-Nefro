@@ -8,6 +8,8 @@ has_many :exames_fisicos
 has_many :acompanhamentos
 
 accepts_nested_attributes_for :resultados_exames  
+accepts_nested_attributes_for :consultas  
+accepts_nested_attributes_for :exames_fisicos  
 
 SITUACOES_PROFISSIONAIS = ["Aposentado", "Desempregado", "Parado"]
 

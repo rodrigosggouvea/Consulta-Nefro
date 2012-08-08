@@ -5,9 +5,9 @@
 			<th>Datas/Resultados</th>
 		</tr>
 		<tr>
-			<th></th>
-			<%= paciente.resultados_exames.each do |resultado| %>
-				<th><%= resultado.data %></th>
+			<td></td>
+			<% paciente.resultados_exames.each do |resultado| %>
+				<td><%= resultado.data %></td>
 			<% end %>
 			<th><%= f.text_field :data, :value => Date.today.to_s, :class => "date_field" %></th>
 		</tr>
@@ -16,147 +16,147 @@
 	<tbody>
 		<tr>
 			<td>Hematocto</td>
-			<%= paciente.resultados_exames.each do |resultado| %>
+			<% paciente.resultados_exames.each do |resultado| %>
 				<td><%= resultado.hematocto %></td>
 			<% end %>
 			<td><%= f.text_field :hematocto %></td>
 		</tr>
 		<tr>
 			<td>Hemoglobina</td>
-			<%= paciente.resultados_exames.each do |resultado| %>
+			<% paciente.resultados_exames.each do |resultado| %>
 				<td><%= resultado.hemoglobina %></td>
 			<% end %>
 			<td><%= f.text_field :hemoglobina %></td>
 		</tr>
 		<tr>
 			<td>Glicose</td>
-			<%= paciente.resultados_exames.each do |resultado| %>
+			<% paciente.resultados_exames.each do |resultado| %>
 				<td><%= resultado.glicose %></td>
 			<% end %>
 			<td><%= f.text_field :glicose %></td>
 		</tr>
 		<tr>
 			<td>Hemoglobina Glicosada</td>
-			<%= paciente.resultados_exames.each do |resultado| %>
+			<% paciente.resultados_exames.each do |resultado| %>
 				<td><%= resultado.hemoglibina_glicosada %></td>
 			<% end %>
 			<td><%= f.text_field :hemoglibina_glicosada %></td>
 		</tr>
 		<tr>
 			<td>Uréia</td>
-			<%= paciente.resultados_exames.each do |resultado| %>
+			<% paciente.resultados_exames.each do |resultado| %>
 				<td><%= resultado.ureia %></td>
 			<% end %>
 			<td><%= f.text_field :ureia %></td>
 		</tr>
 	  <tr>
 			<td>Creatinina</td>
-			<%= paciente.resultados_exames.each do |resultado| %>
+			<% paciente.resultados_exames.each do |resultado| %>
 				<td><%= resultado.creatinina %></td>
 			<% end %>
 			<td><%= f.text_field :creatinina %></td>
 		</tr>
 	  <tr>
 			<td>Sódio</td>
-			<%= paciente.resultados_exames.each do |resultado| %>
+			<% paciente.resultados_exames.each do |resultado| %>
 				<td><%= resultado.sodio %></td>
 			<% end %>
 			<td><%= f.text_field :sodio %></td>
 		</tr>
 	  <tr>
 			<td>Potássio</td>
-			<%= paciente.resultados_exames.each do |resultado| %>
+			<% paciente.resultados_exames.each do |resultado| %>
 				<td><%= resultado.potassio %></td>
 			<% end %>
 			<td><%= f.text_field :potassio %></td>
 		</tr>
 	  <tr>
 			<td>Cálcio</td>
-			<%= paciente.resultados_exames.each do |resultado| %>
+			<% paciente.resultados_exames.each do |resultado| %>
 				<td><%= resultado.calcio %></td>
 			<% end %>
 			<td><%= f.text_field :calcio %></td>
 		</tr>
 	  <tr>
 			<td>Fósforo</td>
-			<%= paciente.resultados_exames.each do |resultado| %>
+			<% paciente.resultados_exames.each do |resultado| %>
 				<td><%= resultado.fosforo %></td>
 			<% end %>
 			<td><%= f.text_field :fosforo %></td>
 		</tr>
 	  <tr>
 			<td>Albumina</td>
-			<%= paciente.resultados_exames.each do |resultado| %>
+			<% paciente.resultados_exames.each do |resultado| %>
 				<td><%= resultado.albumina %></td>
 			<% end %>
 			<td><%= f.text_field :albumina %></td>
 		</tr>
 	    <tr>
 			<td>Àcido Úrico</td>
-			<%= paciente.resultados_exames.each do |resultado| %>
+			<% paciente.resultados_exames.each do |resultado| %>
 				<td><%= resultado.acido_urico %></td>
 			<% end %>
 			<td><%= f.text_field :acido_urico %></td>
 		</tr>
 	  <tr>
 			<td>Colesterol</td>
-			<%= paciente.resultados_exames.each do |resultado| %>
+			<% paciente.resultados_exames.each do |resultado| %>
 				<td><%= resultado.colesterol %></td>
 			<% end %>
 			<td><%= f.text_field :colesterol %></td>
 		</tr>
 	  <tr>
 			<td>HDL</td>
-			<%= paciente.resultados_exames.each do |resultado| %>
+			<% paciente.resultados_exames.each do |resultado| %>
 				<td><%= resultado.hdl %></td>
 			<% end %>
 			<td><%= f.text_field :hdl %></td>
 		</tr>
 	  <tr>
 			<td>LDL</td>
-			<%= paciente.resultados_exames.each do |resultado| %>
+			<% paciente.resultados_exames.each do |resultado| %>
 				<td><%= resultado.ldl %></td>
 			<% end %>
 			<td><%= f.text_field :ldl %></td>
 		</tr>
 	  <tr>
 			<td>Triglicerídios</td>
-			<%= paciente.resultados_exames.each do |resultado| %>
+			<% paciente.resultados_exames.each do |resultado| %>
 				<td><%= resultado.trigliceridios %></td>
 			<% end %>
 			<td><%= f.text_field :trigliceridios %></td>
 		</tr>
 	  <tr>
 			<td>Volume</td>
-			<%= paciente.resultados_exames.each do |resultado| %>
+			<% paciente.resultados_exames.each do |resultado| %>
 				<td><%= resultado.volume %></td>
 			<% end %>
 			<td><%= f.text_field :volume %></td>
 		</tr>
 	  <tr>
 			<td>Clearance</td>
-			<%= paciente.resultados_exames.each do |resultado| %>
+			<% paciente.resultados_exames.each do |resultado| %>
 				<td><%= resultado.clearance %></td>
 			<% end %>
 			<td><%= f.text_field :clearance %></td>
 		</tr>
 	  <tr>
 			<td>Proteinúria</td>
-			<%= paciente.resultados_exames.each do |resultado| %>
+			<% paciente.resultados_exames.each do |resultado| %>
 				<td><%= resultado.proteinuria %></td>
 			<% end %>
 			<td><%= f.text_field :proteinuria %></td>
 		</tr>
 	  <tr>
 			<td>UCT</td>
-			<%= paciente.resultados_exames.each do |resultado| %>
+			<% paciente.resultados_exames.each do |resultado| %>
 				<td><%= resultado.uct %></td>
 			<% end %>
 			<td><%= f.text_field :uct %></td>
 		</tr>
 	  <tr>
 			<td>EAS</td>
-			<%= paciente.resultados_exames.each do |resultado| %>
+			<% paciente.resultados_exames.each do |resultado| %>
 				<td><%= resultado.eas %></td>
 			<% end %>
 			<td><%= f.text_field :eas %></td>
