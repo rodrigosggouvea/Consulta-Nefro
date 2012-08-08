@@ -4,7 +4,7 @@ belongs_to :estado
 belongs_to :estado_civil
 has_many :consultas
 has_many :resultados_exames, :class_name => "ResultadoExames"
-has_many :exames_fisicos
+has_many :exames_fisicos, :class_name => "ExameFisico"
 has_many :acompanhamentos
 
 accepts_nested_attributes_for :resultados_exames  

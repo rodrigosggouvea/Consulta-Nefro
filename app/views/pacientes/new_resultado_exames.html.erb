@@ -1,6 +1,6 @@
 <h1>Exames do Paciente <%= @paciente.nome %></h1>
 <hr/>
-<%= form_for :resultado_exame, @resultado_exames, :url => create_resultado_exames_pacientes_path(:paciente_id => params[:paciente_id]) do |f| %>
+<%= form_for @resultado_exames, :url => create_resultado_exames_pacientes_path(:paciente_id => params[:paciente_id]) do |f| %>
 <%= render :partial => "exames_fields", :locals => {:f => f, :paciente => @paciente} -%>
 	<%= f.submit "Salvar", :class => "btn" %>
 <% end %>

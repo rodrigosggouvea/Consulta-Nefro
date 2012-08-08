@@ -23,7 +23,6 @@ class PacientesController < ApplicationController
   end
 
   def create
-    binding.pry
     @paciente = Paciente.new(params[:paciente])
       if @paciente.save
         redirect_to pacientes_path, notice: 'Paciente criado com sucesso!'
